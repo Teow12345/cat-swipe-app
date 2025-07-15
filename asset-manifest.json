@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cat-swipe-app/static/css/main.cf890fdb.css",
+    "main.js": "/cat-swipe-app/static/js/main.87fc21d8.js",
+    "index.html": "/cat-swipe-app/index.html",
+    "main.cf890fdb.css.map": "/cat-swipe-app/static/css/main.cf890fdb.css.map",
+    "main.87fc21d8.js.map": "/cat-swipe-app/static/js/main.87fc21d8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cf890fdb.css",
+    "static/js/main.87fc21d8.js"
+  ]
+}
