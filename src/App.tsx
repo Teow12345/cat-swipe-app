@@ -179,10 +179,10 @@ const CatSwipeApp: React.FC = () => {
 
   if (isComplete) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 p-4">
-        <div className="max-w-md mx-auto pt-8">
-          <div className="bg-white rounded-3xl p-6 shadow-2xl">
-            <div className="text-center mb-6">
+      <div className="min-h-screen bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 flex items-center justify-center">
+        <div className="max-w-md w-full px-4">
+          <div className="bg-white rounded-3xl p-6 shadow-2xl text-center">
+            <div className="mb-6">
               <Sparkles className="w-16 h-16 text-purple-500 mx-auto mb-4" />
               <h2 className="text-3xl font-bold text-gray-800 mb-2">
                 All Done!
@@ -194,7 +194,7 @@ const CatSwipeApp: React.FC = () => {
 
             {likedCats.length > 0 && (
               <div className="mb-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">
+                <h3 className="text-xl font-semibold text-gray-800 mb-4">
                   Your Favorites
                 </h3>
                 <div className="grid grid-cols-2 gap-3 max-h-96 overflow-y-auto">
@@ -226,14 +226,12 @@ const CatSwipeApp: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 select-none">
+    <div className="min-h-screen bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 select-none flex flex-col">
       {/* Header */}
-      <div className="p-4 pt-8">
-        <div className="max-w-md mx-auto">
-          <h1 className="text-3xl font-bold text-white text-center mb-2">
-            Cat Swipe
-          </h1>
-          <div className="bg-white bg-opacity-20 rounded-full px-4 py-2 text-white text-center">
+      <div className="p-4 pt-8 text-center">
+        <div className="mx-auto">
+          <h1 className="text-5xl font-bold text-white mb-3">Cat Swipe</h1>
+          <div className="bg-white bg-opacity-20 rounded-full px-4 py-2 text-white inline-block">
             {currentIndex + 1} / {cats.length}
           </div>
         </div>
@@ -241,7 +239,7 @@ const CatSwipeApp: React.FC = () => {
 
       {/* Card Stack */}
       <div className="flex-1 flex items-center justify-center p-4">
-        <div className="relative w-full max-w-sm">
+        <div className="relative w-full max-w-sm mx-auto">
           {/* Background cards for stack effect */}
           {currentIndex + 1 < cats.length && (
             <div className="absolute inset-0 bg-white rounded-3xl shadow-lg transform scale-95 opacity-50"></div>
@@ -270,7 +268,7 @@ const CatSwipeApp: React.FC = () => {
                   className="absolute inset-0 bg-green-500 flex items-center justify-center z-10"
                   style={{ opacity: getOverlayOpacity() }}
                 >
-                  <div className="text-white text-6xl font-bold transform rotate-12">
+                  <div className="text-white text-8xl font-bold transform rotate-12">
                     LIKE
                   </div>
                 </div>
@@ -280,26 +278,28 @@ const CatSwipeApp: React.FC = () => {
                   className="absolute inset-0 bg-red-500 flex items-center justify-center z-10"
                   style={{ opacity: getOverlayOpacity() }}
                 >
-                  <div className="text-white text-6xl font-bold transform -rotate-12">
+                  <div className="text-white text-8xl font-bold transform -rotate-12">
                     NOPE
                   </div>
                 </div>
               )}
 
-              <img
-                src={cats[currentIndex].url}
-                alt={`Cat ${currentIndex + 1}`}
-                className="w-full h-96 object-cover"
-                draggable="false"
-              />
+              <div className="flex flex-col items-center">
+                <img
+                  src={cats[currentIndex].url}
+                  alt={`Cat ${currentIndex + 1}`}
+                  className="w-full h-96 object-cover"
+                  draggable="false"
+                />
 
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                  Cat #{currentIndex + 1}
-                </h3>
-                <p className="text-gray-600">
-                  Swipe right to like, left to pass
-                </p>
+                <div className="p-6 text-center w-full">
+                  <h3 className="text-3xl font-semibold text-gray-800 mb-3">
+                    Cat #{currentIndex + 1}
+                  </h3>
+                  <p className="text-xl text-gray-600">
+                    Swipe right to like, left to pass
+                  </p>
+                </div>
               </div>
             </div>
           )}
@@ -307,8 +307,8 @@ const CatSwipeApp: React.FC = () => {
       </div>
 
       {/* Action Buttons */}
-      <div className="p-4 pb-8">
-        <div className="max-w-md mx-auto flex justify-center gap-6">
+      <div className="p-4 pb-8 text-center">
+        <div className="flex justify-center gap-6 mx-auto">
           <button
             onClick={() => handleSwipe("left")}
             className="bg-white bg-opacity-20 backdrop-blur-sm p-4 rounded-full shadow-lg hover:bg-opacity-30 transition-all duration-200 transform hover:scale-110 active:scale-95"
